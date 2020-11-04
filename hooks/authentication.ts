@@ -10,9 +10,6 @@ const userState = atom<User>({
 
 export function useAuthentication() {
   const [user, setUser] = useRecoilState(userState)
-
-  //DOM描写後に走る,第二引数が変更されると再度実行される。
-  //実行は一度だけで良いので空配列を渡している。
   useEffect(() => {
     if (user !== null) {
       return

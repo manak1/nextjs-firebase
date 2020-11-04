@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import firebase from "firebase";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
+import { Answer } from "../../models/Answer";
 
 type Query = {
   uid: string;
@@ -13,6 +14,7 @@ export default function UserShow() {
   const [user, setUser] = useState<User>(null);
   const [body, setBody] = useState("");
   const [isSending, setIsSending] = useState(false);
+
 
   const router = useRouter();
   const query = router.query as Query;
